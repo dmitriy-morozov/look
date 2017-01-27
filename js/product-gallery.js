@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#thumbs img").hover(function(){$("#largeImage").attr("src",$(this).attr("src").replace())});var r=[];$("#thumbs img").each(function(){imgUrl=this.src.replace(),r.push(imgUrl)}),$(r).preload()}),$.fn.preload=function(){this.each(function(){$("<img/>")[0].src=this})};
