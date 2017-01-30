@@ -1,0 +1,313 @@
+// верхняя часть header, в которую входит 
+.header-top {
+    background: black;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    // сброс стилей бутстрапа
+    &:after, &:before {
+        content: none;
+    }
+
+    // flexbox для прижимания к краям
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &:after, &:before {
+            content: none;
+        }
+        @media @xs {
+            padding: 0;
+        }
+    }
+
+
+    .header-right {
+        padding: 0;
+    }
+    @media @xs {
+        padding: 0;
+    }
+}
+
+// Номер телефона
+.header__custom-care {
+    padding: 10px;
+    @media @xs {
+        background: white;
+        color: #838383;
+        text-align: center;
+    }
+}
+
+// Выбор валюты
+.header__currency {
+    border-left: 2px solid rgb(68, 68, 68);
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+    }
+    p {
+        margin: 0;
+        padding: 10px;
+    }
+    @media @xs {
+        border-left: none;
+    }
+}
+
+// Аккаунт
+.header__account {
+    border-right: 2px solid rgb(68, 68, 68);
+    border-left: 2px solid rgb(68, 68, 68);
+    padding: 10px;
+    text-align: center;
+}
+
+// Поиск
+.header__search {
+    border-right: 2px solid rgb(68, 68, 68);
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    form {
+        display: none;
+        top: 10px;
+        left: 0;
+        position: absolute;
+        z-index: 111;
+        color: black;
+    }
+    &:hover {
+        form {
+            display: block;
+        }
+    }
+    @media @xs {
+        border-right: none;
+    }
+}
+
+// Меню
+.navbar {
+    display: flex;
+    padding: 20px 0;
+    margin-bottom: 0;
+    border: none;
+    background-color: white;
+
+    // флекс контейнер
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        @media @xs {
+            width: 100%;
+        }
+        .navbar__logo {
+            @media @sm {
+                order: 1;
+            }
+        }
+        .header-cart {
+            margin: 0;
+            @media @sm {
+                order: 2;
+            }
+        }
+        .navbar-menu {
+            @media @sm {
+                width: 100%;
+                order: 3;
+                margin-top: 20px;
+                background: #fd926d;
+            }
+            p {
+                display: none;
+                @media @sm {
+                    display: inline-block;
+                    line-height: 50px;
+                    margin: 0;
+                    margin-left: 20px;
+                    color: white;
+                }
+            }
+            .icon-bar {
+                background: white;
+            }
+        }
+        .navbar-collapse {
+            @media @sm {
+                order: 4;
+                width: 100%;
+                margin: 0;
+            }
+        }
+        &:after,
+        &:before {
+            content: none;
+        }
+    }
+}
+
+// сброс стилей бутстрапа
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    border: none;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav li {
+    @media @sm {
+        text-align: center;
+    }
+}
+
+// стили пунктов меню
+.navbar-default .navbar-nav > li > a {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    &:hover {
+        color: black;
+        background: #cccccc;
+    }
+    @media @sm {
+        text-align: center;
+    }
+}
+.navbar-default .navbar-nav > .active > a {
+    color: white;
+    background: black;
+}
+// Корзина
+.header-cart {
+    padding: 0;
+    &__button, &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #d6d6d6;
+        color: #949393;
+        background: none;
+    }
+    &__info {
+        border-top: none;
+    }
+}
+
+// Главный большой слайдер
+.header-slider {
+    padding: 0;
+    h1 {
+        display: none;
+    }
+    .slider-image {
+        width: 100%;
+        height: auto;
+    }
+    .carousel-inner {
+        padding-bottom: 60px;
+    }
+}
+// прогресс-бар к слайдеру
+.progress {
+    position: relative;
+    bottom: 10px;
+    left: 0;
+    margin-bottom: 0;
+    width: 100%;
+    height: 10px;
+    background: black;
+    opacity: 0.3;
+}
+
+// элемент слайдера
+.carousel-item {
+    position: relative;
+    @media @sm {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // текст картинкой
+    .slider-text {
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        @media @sm {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            img {
+                width: 70%;
+                height: auto;
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// стрелки управления
+.carousel-control {
+    color: black;
+    top: 50%;
+    height: 120px;
+    width: 30px;
+    transform: translateY(-50%);
+    span {
+        font-size: 20px;
+    }
+}
+.carousel-control.left {
+    background: none;
+    background: white;
+}
+.carousel-control.right {
+    background: none;
+    background: white;
+}
+.carousel-indicators {
+    bottom: 10px;
+    li {
+        background: #867a76;
+    }
+    .active {
+        background: #fd926d;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

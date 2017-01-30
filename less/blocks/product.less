@@ -1,0 +1,147 @@
+// галерея фото товара
+.product-gallery {
+    &__tumbs {
+        margin-top: 20px;
+        padding: 0;
+    }
+    img {
+        height: auto;
+    }
+}
+// описание к товару
+.product-description {
+    // хлебные крошки на странице товара
+    &__breadcrumb {
+        padding: 20px 0;
+        color: #8f8f8f;
+        font-size: 12px;
+        border-bottom: 1px solid #d6d6d6;
+        a {
+            color: #fd926d;
+        }
+    }
+    &__title {
+        color: #4a4a4a;
+        font-size: 24px;
+    }
+    &__price {
+        color: #fd926d;
+        font-size: 36px;
+    }
+    &__decription {
+        color: #8f8f8f;
+        font-size: 12px;
+    }
+    &__size {
+        position: relative;
+        padding: 0;
+        width: 190px;
+        z-index: 22;
+        background: #f4f4f4;
+        @media @xs {
+            width: 100%;
+        }
+        &:hover {
+            box-shadow: 0px 0px 3px gray;
+        }
+        // кастомный селект для размеров
+        select {
+            width: 100%;
+            z-index: 22;
+            padding: 10px;
+            background: transparent;
+            border: 0;
+            appearance: none;
+            /* remove arrow        */
+            
+            -webkit-appearance: none;
+            /* remove arrow Chrome */
+            
+            -moz-appearance: none;
+            /* remove arrow FF     */
+        }
+        select::-ms-expand {
+            display: none;
+            /* remove arrow IE     */
+        }
+    }
+    // стрелка на селекте
+    .arrow {
+        display: block;
+        z-index: -11;
+        position: absolute;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        background: #e5e5e5;
+    }
+    .select-arrow {
+        position: absolute;
+        border: 8px solid transparent;
+        border-bottom: 0;
+        right: 13px;
+    }
+    .select-arrow:nth-child(1) {
+        top: 16px;
+        border-top-color: #6C7231;
+    }
+    .select-arrow:nth-child(2) {
+        top: 13px;
+        border-top-color: #e5e5e5;
+    }
+
+    // цвет товара
+    &__color {
+        .color {
+            width: 40px;
+            height: 40px;
+            &-red {
+                background: red;
+            }
+            &-yellow {
+                background: yellow;
+            }
+            &-blue {
+                background: blue;
+            }
+            &-brown {
+                background: brown;
+            }
+            &-black {
+                background: black;
+            }
+        }
+    }
+}
+
+
+// вспомогательный класс для добавления бордеров 
+.decoration-line {
+    padding: 10px 0;
+    margin: 20px 0;
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+// количество товара
+.counter {
+    margin-top: 10px;
+    vertical-align: middle;
+    button, input {
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        color: white;
+        background: #fd926d;
+        border: none;
+        border-radius: 0;
+        box-shadow: 0px 3px 0px 0px rgba(221, 107, 68, 1);
+    }
+    input {
+        margin: 0 -4px;
+        background: #feb298;
+        box-shadow: none;
+        box-shadow: 0px 3px 0px 0px #feb298;
+    }
+}

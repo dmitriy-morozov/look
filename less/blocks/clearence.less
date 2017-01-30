@@ -1,0 +1,44 @@
+// слайдер clearence
+.clearence {
+    padding: 30px 0;
+    
+    .sales-lists {
+        padding: 20px 0;
+    }
+    h2 {
+        position: relative;
+
+        // Полоски по сторонам от заголовка
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: -1;
+            width: 35%;
+            height: 1px;
+            background: #d8d8d8;
+
+            @media @sm {
+                width: 25%;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: -1;
+            width: 35%;
+            height: 1px;
+            background: #d8d8d8;
+
+            @media @sm {
+                width: 25%;
+            }
+        }
+    }
+    .sales-item__info {
+        background: #f7f7f7;
+    }
+}
