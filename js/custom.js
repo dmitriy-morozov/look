@@ -1,5 +1,5 @@
-/* Главный слайдер с прогресс-баром */
-$(document).ready(function() {
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅ */
+$(document).ready(function () {
     var percent = 0,
         bar = $('.progress'),
         crsl = $('#header-slider__carousel');
@@ -14,97 +14,96 @@ $(document).ready(function() {
             crsl.carousel('next');
         }
     }
+
     crsl.carousel({
         interval: false,
         pause: true
-    }).on('slid.bs.carousel', function() {});
+    }).on('slid.bs.carousel', function () {
+    });
     var barInterval = setInterval(progressBarCarousel, 30);
     crsl.hover(
-        function() {
+        function () {
             clearInterval(barInterval);
         },
-        function() {
+        function () {
             barInterval = setInterval(progressBarCarousel, 30);
         })
 });
 
 
+/* пїЅпїЅпїЅпїЅ */
 
-/* Табы */
-
-$('#tab_selector').on('change', function(e) {
+$('#tab_selector').on('change', function (e) {
     $('.nav-tabs li a').eq($(this).val()).tab('show');
 });
 
 
-
 /* Load More */
 
-$(function() {
+$(function () {
     $("#sales-tab-1 .sales-item").slice(0, 2).show();
-    $("#tabs1-loadmore").on('click', function(e) {
+    $("#tabs1-loadmore").on('click', function (e) {
         e.preventDefault();
         $("#sales-tab-1 .sales-item:hidden").slice(0, 2).slideDown();
         if ($("#sales-tab-1 .sales-item:hidden").length == 0) {
-            $("#load").fadeOut('slow');
+            $("#sales-tab-1 .button-load").removeClass('visible-xs-inline-block').hide();
         }
 
     });
 });
 
-$(function() {
+$(function () {
     $("#sales-tab-2 .sales-item").slice(0, 2).show();
-    $("#tabs2-loadmore").on('click', function(e) {
+    $("#tabs2-loadmore").on('click', function (e) {
         e.preventDefault();
         $("#sales-tab-2 .sales-item:hidden").slice(0, 2).slideDown();
         if ($("#sales-tab-2 .sales-item:hidden").length == 0) {
-            $("#load").fadeOut('slow');
+            $("#sales-tab-2 .button-load").removeClass('visible-xs-inline-block').hide();
         }
 
     });
 });
 
-$(function() {
+$(function () {
     $("#sales-tab-3 .sales-item").slice(0, 2).show();
-    $("#tabs3-loadmore").on('click', function(e) {
+    $("#tabs3-loadmore").on('click', function (e) {
         e.preventDefault();
         $("#sales-tab-3 .sales-item:hidden").slice(0, 2).slideDown();
         if ($("#sales-tab-3 .sales-item:hidden").length == 0) {
-            $("#load").fadeOut('slow');
+            $("#sales-tab-3 .button-load").removeClass('visible-xs-inline-block').hide();
         }
 
     });
 });
 
-$(function() {
+$(function () {
     $("#sales-tab-4 .sales-item").slice(0, 2).show();
-    $("#tabs4-loadmore").on('click', function(e) {
+    $("#tabs4-loadmore").on('click', function (e) {
         e.preventDefault();
         $("#sales-tab-4 .sales-item:hidden").slice(0, 2).slideDown();
         if ($("#sales-tab-4 .sales-item:hidden").length == 0) {
-            $("#load").fadeOut('slow');
+            $("#sales-tab-4 .button-load").removeClass('visible-xs-inline-block').hide();
         }
 
     });
 });
 
-$(function() {
+$(function () {
     $(".clearence .sales-item").slice(0, 2).show();
-    $("#clearence-loadmore").on('click', function(e) {
+    $("#clearence-loadmore").on('click', function (e) {
         e.preventDefault();
         $(".clearence .sales-item:hidden").slice(0, 2).slideDown();
         if ($(".clearence .sales-item:hidden").length == 0) {
-            $("#load").fadeOut('slow');
+            $(".clearence .button-load").removeClass('visible-xs-inline-block').hide();
         }
 
     });
 });
 
 
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ*/
 
-/* Расчёт ширины элементов слайдера в табах*/
-
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     var width2 = $('.sales-tab.container').outerWidth();
 
     if (width2 > 1171) {
@@ -116,13 +115,11 @@ jQuery(document).ready(function() {
     } else if (width2 < 749) {
         $('.sales-item').width((width2 - 60) * 0.5);
     }
-
-
 });
 
-/* Расчёт ширины элементов слайдера в табах при измении ширины окна*/
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
 
-$(window).resize(function() {
+$(window).resize(function () {
     var width2 = $('.sales-tab.container').outerWidth();
 
     if (width2 > 1171) {
@@ -138,34 +135,33 @@ $(window).resize(function() {
 });
 
 
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
 
-/* Слайдер для первого таба */
-
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     function htmSlider() {
-        /* Зададим следующие переменные */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 
-        /* обертка слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWrap = jQuery('.sales-list');
-        /* ссылки на предудыщий иследующий слайд */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
         var nextLink = jQuery('.right');
         var prevLink = jQuery('.left');
 
         var is_animate = false;
 
-        /* ширина слайда с отступами */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWidth = jQuery('.sales-item').outerWidth();
 
-        /* смещение слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var newLeftPos = slideWrap.position().left - slideWidth;
 
-        /* Клик по ссылке на следующий слайд */
-        nextLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        nextLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -178,8 +174,8 @@ jQuery(document).ready(function() {
             }
         });
 
-        /* Клик по ссылке на предыдующий слайд */
-        prevLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        prevLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap
@@ -197,14 +193,13 @@ jQuery(document).ready(function() {
         });
 
 
-
-        /* Функция автоматической прокрутки слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         function autoplay() {
             if (!is_animate) {
                 is_animate = true;
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -225,7 +220,7 @@ jQuery(document).ready(function() {
             timer = setInterval(autoplay, 5000);
         }
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             var width2 = $('.sales-tab.container').outerWidth();
             clearInterval(timer);
 
@@ -239,19 +234,19 @@ jQuery(document).ready(function() {
 
     }
 
-    /* иницилизируем функцию слайдера */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     htmSlider();
 });
 
-/* Слайдер для второго таба */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     function htmSlider() {
-        /* Зададим следующие переменные */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 
-        /* обертка слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWrap = jQuery('.sales-list-2');
-        /* ссылки на предудыщий иследующий слайд */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
         var nextLink = jQuery('.right');
         var prevLink = jQuery('.left');
 
@@ -259,19 +254,19 @@ jQuery(document).ready(function() {
 
         var is_animate = false;
 
-        /* ширина слайда с отступами */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWidth = jQuery('.sales-item').outerWidth();
 
-        /* смещение слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var newLeftPos = slideWrap.position().left - slideWidth;
 
-        /* Клик по ссылке на следующий слайд */
-        nextLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        nextLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -284,8 +279,8 @@ jQuery(document).ready(function() {
             }
         });
 
-        /* Клик по ссылке на предыдующий слайд */
-        prevLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        prevLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap
@@ -303,14 +298,13 @@ jQuery(document).ready(function() {
         });
 
 
-
-        /* Функция автоматической прокрутки слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         function autoplay() {
             if (!is_animate) {
                 is_animate = true;
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -331,7 +325,7 @@ jQuery(document).ready(function() {
             timer = setInterval(autoplay, 5000);
         }
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             var width2 = $('.sales-tab.container').outerWidth();
             clearInterval(timer);
 
@@ -346,19 +340,19 @@ jQuery(document).ready(function() {
 
     }
 
-    /* иницилизируем функцию слайдера */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     htmSlider();
 });
 
-/* Слайдер для третьего таба */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     function htmSlider() {
-        /* Зададим следующие переменные */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 
-        /* обертка слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWrap = jQuery('.sales-list-3');
-        /* ссылки на предудыщий иследующий слайд */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
         var nextLink = jQuery('.right');
         var prevLink = jQuery('.left');
 
@@ -366,19 +360,19 @@ jQuery(document).ready(function() {
 
         var is_animate = false;
 
-        /* ширина слайда с отступами */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWidth = jQuery('.sales-item').outerWidth();
 
-        /* смещение слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var newLeftPos = slideWrap.position().left - slideWidth;
 
-        /* Клик по ссылке на следующий слайд */
-        nextLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        nextLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -391,8 +385,8 @@ jQuery(document).ready(function() {
             }
         });
 
-        /* Клик по ссылке на предыдующий слайд */
-        prevLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        prevLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap
@@ -410,14 +404,13 @@ jQuery(document).ready(function() {
         });
 
 
-
-        /* Функция автоматической прокрутки слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         function autoplay() {
             if (!is_animate) {
                 is_animate = true;
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -438,7 +431,7 @@ jQuery(document).ready(function() {
             timer = setInterval(autoplay, 5000);
         }
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             var width2 = $('.sales-tab.container').outerWidth();
             clearInterval(timer);
 
@@ -452,19 +445,19 @@ jQuery(document).ready(function() {
 
     }
 
-    /* иницилизируем функцию слайдера */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     htmSlider();
 });
 
-/* Слайдер для четвертого таба */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     function htmSlider() {
-        /* Зададим следующие переменные */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 
-        /* обертка слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWrap = jQuery('.sales-list-4');
-        /* ссылки на предудыщий иследующий слайд */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
         var nextLink = jQuery('.right');
         var prevLink = jQuery('.left');
 
@@ -472,19 +465,19 @@ jQuery(document).ready(function() {
 
         var is_animate = false;
 
-        /* ширина слайда с отступами */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWidth = jQuery('.sales-item').outerWidth();
 
-        /* смещение слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var newLeftPos = slideWrap.position().left - slideWidth;
 
-        /* Клик по ссылке на следующий слайд */
-        nextLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        nextLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -497,8 +490,8 @@ jQuery(document).ready(function() {
             }
         });
 
-        /* Клик по ссылке на предыдующий слайд */
-        prevLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        prevLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap
@@ -516,14 +509,13 @@ jQuery(document).ready(function() {
         });
 
 
-
-        /* Функция автоматической прокрутки слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         function autoplay() {
             if (!is_animate) {
                 is_animate = true;
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -544,7 +536,7 @@ jQuery(document).ready(function() {
             timer = setInterval(autoplay, 5000);
         }
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             var width2 = $('.sales-tab.container').outerWidth();
             clearInterval(timer);
 
@@ -558,20 +550,20 @@ jQuery(document).ready(function() {
 
     }
 
-    /* иницилизируем функцию слайдера */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     htmSlider();
 });
 
 
-/* Слайдер для  Clearance */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ  Clearance */
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     function htmSlider() {
-        /* Зададим следующие переменные */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 
-        /* обертка слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWrap = jQuery('.sales-list-5');
-        /* ссылки на предудыщий иследующий слайд */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
         var nextLink = jQuery('.right');
         var prevLink = jQuery('.left');
 
@@ -579,19 +571,19 @@ jQuery(document).ready(function() {
 
         var is_animate = false;
 
-        /* ширина слайда с отступами */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var slideWidth = jQuery('.sales-item').outerWidth();
 
-        /* смещение слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var newLeftPos = slideWrap.position().left - slideWidth;
 
-        /* Клик по ссылке на следующий слайд */
-        nextLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        nextLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -604,8 +596,8 @@ jQuery(document).ready(function() {
             }
         });
 
-        /* Клик по ссылке на предыдующий слайд */
-        prevLink.click(function() {
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        prevLink.click(function () {
             if (!slideWrap.is(':animated')) {
 
                 slideWrap
@@ -623,14 +615,13 @@ jQuery(document).ready(function() {
         });
 
 
-
-        /* Функция автоматической прокрутки слайдера */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         function autoplay() {
             if (!is_animate) {
                 is_animate = true;
                 slideWrap.animate({
                     left: newLeftPos
-                }, 500, function() {
+                }, 500, function () {
                     slideWrap
                         .find('.sales-item:first')
                         .appendTo(slideWrap)
@@ -651,7 +642,7 @@ jQuery(document).ready(function() {
             timer = setInterval(autoplay, 5000);
         }
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             var width2 = $('.sales-tab.container').outerWidth();
             clearInterval(timer);
 
@@ -665,6 +656,6 @@ jQuery(document).ready(function() {
 
     }
 
-    /* иницилизируем функцию слайдера */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     htmSlider();
 });
